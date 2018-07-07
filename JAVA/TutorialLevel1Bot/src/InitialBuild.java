@@ -32,7 +32,7 @@ System.out.println("turret1X="+BlockingEntrance.Instance().turret1X);
 System.out.println("turret1Y="+BlockingEntrance.Instance().turret1Y);
 
 		if (InformationManager.Instance().enemyRace == Race.Terran) {
-			
+			System.out.println("InittialBuildOrder:Terran");
 			
 //			if(InformationManager.Instance().getMapSpecificInformation().getMap() != MAP.TheHunters){
 				//기타맵 테란전
@@ -123,6 +123,7 @@ System.out.println("turret1Y="+BlockingEntrance.Instance().turret1Y);
 //			}
 			
 		}else if (InformationManager.Instance().enemyRace == Race.Protoss) {
+			System.out.println("InittialBuildOrder:Protoss");
 			//if(InformationManager.Instance().getMapSpecificInformation().getMap() != MAP.TheHunters){
 				queueBuild(true, UnitType.Terran_SCV, UnitType.Terran_SCV, UnitType.Terran_SCV, UnitType.Terran_SCV);
 				BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Terran_Supply_Depot, firstSupplyPos,true,true);
@@ -170,6 +171,7 @@ System.out.println("turret1Y="+BlockingEntrance.Instance().turret1Y);
 //			}
 
 		}else{//저그전
+			System.out.println("InittialBuildOrder:Zerg");
 				queueBuild(true, UnitType.Terran_SCV, UnitType.Terran_SCV, UnitType.Terran_SCV, UnitType.Terran_SCV, UnitType.Terran_SCV);
 	            BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Terran_Barracks, barrackPos,true);
 	            BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Terran_Supply_Depot, firstSupplyPos,true);

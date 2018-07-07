@@ -119,7 +119,8 @@ public class InformationManager {
 		FirstVulture = null;
 		
 		
-		for (Unit unit : MyBotModule.Broodwar.self().getUnits()){
+		for (Unit unit : MyBotModule.Broodwar.self().getUnits())
+		{
 			if(unit.getType() == UnitType.Terran_Command_Center && FirstCC==null){
 				FirstCC = unit;
 			}

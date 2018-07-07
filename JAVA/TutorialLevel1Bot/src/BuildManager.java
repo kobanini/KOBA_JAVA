@@ -79,18 +79,21 @@ public class BuildManager {
 		//System.out.println("current HighestPriorityItem is " + currentItem.metaType.getName());
 
 		// while there is still something left in the buildQueue
-		while (!buildQueue.isEmpty()) {
+		while (!buildQueue.isEmpty()) 
+		{
 			boolean isOkToRemoveQueue = true;
 
 			// seedPosition 을 도출한다
 			Position seedPosition = null;
 			if (currentItem.seedLocation != TilePosition.None && currentItem.seedLocation != TilePosition.Invalid 
-					&& currentItem.seedLocation != TilePosition.Unknown && currentItem.seedLocation.isValid()) {				
+					&& currentItem.seedLocation != TilePosition.Unknown && currentItem.seedLocation.isValid()) 
+			{
 				seedPosition = currentItem.seedLocation.toPosition();
 				System.out.println("currentItem.seedLocation=" + currentItem.seedLocation + "seedPosition="
 						+ seedPosition + " " + new Exception().getStackTrace()[0].getLineNumber());
 			}
-			else {
+			else 
+			{
 				seedPosition = getSeedPositionFromSeedLocationStrategy(currentItem.seedLocationStrategy);
 				System.out.println("currentItem.seedLocation=" + currentItem.seedLocation + "seedPosition="
 						+ seedPosition + " " + new Exception().getStackTrace()[0].getLineNumber());
